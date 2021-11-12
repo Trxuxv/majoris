@@ -1,0 +1,56 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img width="50" routerLink="inicio" alt="Majoris Logo" src="./../assets/circulo4.png" />
+  <div class="spacer" style="text-align: right; margin-right: 6%;">
+    <button mat-button routerLink="contato">Contato</button>
+
+    <button mat-button [matMenuTriggerFor]="belowMenu">Sustentabilidade</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+      <button mat-menu-item>Gases estufa</button>
+      <button mat-menu-item>Crédito de Carbono</button>
+    </mat-menu>
+
+    
+    <button mat-button [matMenuTriggerFor]="beforeMenu">Dashboard</button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item>Resultados</button>
+    </mat-menu>
+    
+    <button mat-button [matMenuTriggerFor]="belowMenu">Maps</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+      <button mat-menu-item>Majoris</button>
+      <button mat-menu-item>Projetos</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="belowMenu">Parceiros</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+      <button mat-menu-item>Latitude</button>
+      <button mat-menu-item>Perfimec</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="afterMenu">Sobre nós</button>
+    <mat-menu #afterMenu="matMenu" xPosition="after">
+      <button mat-menu-item>História</button>
+      <button mat-menu-item>Cultura</button>
+      <button mat-menu-item [matMenuTriggerFor]="Gestoes">Onde atuamos</button>
+      <mat-menu #Gestoes="matMenu" xPosition="after">
+        <button mat-menu-item>Gestão de Usinas</button>
+        <button mat-menu-item>Gestão de Projetos</button>
+        <button mat-menu-item>Gestão de Áreas</button>
+        <button mat-menu-item>Gestão de Créditos de Carbono</button>
+        <button mat-menu-item>Gestão de Geradores</button>
+        <button mat-menu-item>Gestão de PPA's</button>
+      </mat-menu>
+    </mat-menu>
+   
+    <button mat-button [matMenuTriggerFor]="belowMenu">Origem</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+      <button mat-menu-item>Texto</button>
+      <button mat-menu-item>Área de atuação</button>
+    </mat-menu>
+  </div>
+</div>
+<div class="content" role="main">
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>
